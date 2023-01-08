@@ -118,7 +118,6 @@ const DisplayTodos = async () => {
 }
 
 
-
 // Program Entry Point
 
 while (true) {
