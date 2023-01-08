@@ -22,6 +22,7 @@ async function Login() {
         const input = await inquirer.prompt([{
             name: chalk.rgb(255, 148, 140)(`Enter Your ${option}`),
             type: 'number',
+            default:option === InputOptions.ID ? 12345:4321
         }])
         let value: number = await input[`\x1B[38;2;255;148;140mEnter Your ${option}\x1B[39m`]
         return value
