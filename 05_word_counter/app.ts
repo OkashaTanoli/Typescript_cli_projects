@@ -6,6 +6,9 @@ import { createSpinner } from 'nanospinner';
 
 let sleep = () => new Promise((r) => setTimeout(r, 2000))
 
+console.log(chalk.bold.rgb(204, 204, 204)('WORDS COUNTER'));
+
+
 async function ParaInput() {
     const input = await inquirer.prompt([{
         name: 'input',
