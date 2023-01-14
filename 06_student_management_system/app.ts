@@ -2,73 +2,102 @@
 
 import inquirer from 'inquirer';
 import chalk from 'chalk';
-import { createSpinner } from 'nanospinner';
+import { Course, Teacher, Student } from './classes/classes.js'
+import { AddStudent, ViewStudents } from './categories/student.js';
+import { AddTeacher, ViewTeachers } from './categories/teacher.js';
+import { AddCourse, ViewCourses } from './categories/course.js';
 
-let sleep = () => new Promise((r) => setTimeout(r, 2000))
 
-class Person {
-    constructor(public name: string, age: number) { }
-}
-class Course {
-    name: string
-    timing: string
-    students: Student[] = []
-    teacher!: Teacher
-    constructor(name: string, timing: string) {
-        this.name = name
-        this.timing = timing
-    }
-    registerStudent(student: Student) {
-        this.students.push(student)
-        student.registerInCourse(this)
-    }
-    setTeacher(teacher: Teacher) {
-        this.teacher = teacher
-        teacher.assignCourse(this)
-    }
+console.log(chalk.bold.rgb(204, 204, 204)('STUDENT MANAGEMENT SYSTEM'));
 
-}
+let students: Student[] = []
+let courses: Course[] = []
+let teachers: Teacher[] = []
 
-class Student extends Person {
-    rollNo: number
-    courses: Course[] = []
-    constructor(name: string, age: number, rollNo: number) {
-        super(name, age)
-        this.rollNo = rollNo
-    }
-    registerInCourse(course: Course) {
-        this.courses.push(course)
-    }
+const DetailsInputs = async (type: string, name: string) => {
+    let value: string | number
+    while (true) {
 
+        const input = await inquirer.prompt([{
+            name: 'input',
+            message: `Enter ${name}: `,
+            type: type
+
+        }])
+        value = await input['input']
+        if (value) {
+            break
+        }
+    }
+    return value
 }
 
-class Teacher extends Person {
-    id: number
-    courses: Course[] = []
-    constructor(name: string, age: number, id: number) {
-        super(name, age)
-        this.id = id
-    }
-    assignCourse(course: Course) {
-        this.courses.push(course)
-    }
-}
 
-function MakeChoice() {
-    const input = inquirer.prompt([{
-        name:'choice',
-        message:"Select One"
+async function IndividualChoice(val: string, ...options: string[]) {
+    const input = await inquirer.prompt([{
+        name: 'choice',
+        message: `${val} Options`,
+        type: 'rawlist',
+        choices: options,
     }])
+    let value: string = await input['choice']
+    return value
 }
 
-const std1 = new Student('okahsa', 19, Math.floor(Math.random() * 99999))
-const std2 = new Student('ali', 20, Math.floor(Math.random() * 99999))
+async function MakeChoice() {
+    const input = await inquirer.prompt([{
+        name: 'choice',
+        message: "Select One",
+        type: 'rawlist',
+        choices: ["Student", "Teacher", "Course"]
+    }])
+    let value: string = await input['choice']
+    if (value === "Student") {
+        const option = await IndividualChoice("Student", "Add Student", "View Students")
+        if (option === "Add Student") {
+            await AddStudent(DetailsInputs, students)
+        }
+        if (option === "View Students") {
+            await ViewStudents(students, courses)
+        }
+    }
+    if (value === "Teacher") {
+        const option = await IndividualChoice("Teacher", "Add Teacher", "View Teachers")
+        if (option === 'Add Teacher') {
+            await AddTeacher(DetailsInputs, teachers)
+        }
+        if (option === 'View Teachers') {
+            await ViewTeachers(teachers, courses)
+        }
 
-const teacher1 = new Teacher("Amir", 40, Math.floor(Math.random() * 99999))
-const teacher2 = new Teacher("Zia", 45, Math.floor(Math.random() * 99999))
+    }
+    if (value === "Course") {
+        const option = await IndividualChoice("Course", "Add Course", "View Courses")
+        if (option === "Add Course") {
+            await AddCourse(DetailsInputs, courses)
+        }
+        if (option === "View Courses") {
+            await ViewCourses(courses, teachers, students)
+        }
+    }
+}
 
-const course1= new Course('BC',"Monday")
-course1.registerStudent(std1)
-course1.setTeacher(teacher1)
 
-console.log(course1.students[0])
+
+// Program Entry Point
+
+while (true) {
+    let choices = await MakeChoice()
+    const input = await inquirer.prompt([
+        {
+            name: chalk.rgb(255, 255, 160)(`Do You Want To Exit?`),
+            type: "confirm",
+            default: false
+        }
+    ])
+    let value: boolean = await input['\x1B[38;2;255;255;160mDo You Want To Exit?\x1B[39m']
+    if (value) {
+        break;
+    }
+}
+
