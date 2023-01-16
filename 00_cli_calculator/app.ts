@@ -5,8 +5,9 @@ import chalk from 'chalk';
 import { createSpinner } from 'nanospinner'
 
 
-console.log(chalk.rgb(204, 204, 204)('CLI CALCULATOR'));
-
+console.log(chalk.bold.rgb(204, 204, 204)(`\n   <<<====================================>>>`));
+console.log(chalk.bold.rgb(204, 204, 204)(`<<<=========>>>  ${chalk.redBright.bold('CLI CALCULATOR')}  <<<=========>>>`));
+console.log(chalk.bold.rgb(204, 204, 204)(`   <<<====================================>>>\n`));
 
 let sleep = () => new Promise((r) => setTimeout(r, 2000));
 
