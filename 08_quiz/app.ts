@@ -3,7 +3,9 @@
 import inquirer from 'inquirer';
 import chalk from 'chalk';
 import { createSpinner } from 'nanospinner';
-import fs from 'fs';
+// import fs from 'fs';
+import { createRequire } from 'module'
+const require = createRequire(import.meta.url)
 
 console.log(chalk.bold.rgb(204, 204, 204)(`\n   <<<============================>>>`));
 console.log(chalk.bold.rgb(204, 204, 204)(`<<<==========>>>  ${chalk.redBright.bold('QUIZ')}  <<<==========>>>`));
@@ -20,8 +22,9 @@ interface IData {
     level: string
 }
 
-const response = fs.readFileSync('./data.json', 'utf8');
-let data: IData[] = JSON.parse(response)
+const data: IData[] = require('./data.json')
+// const response = fs.readFileSync(`${__dirname}\\data.json`, 'utf8');
+// let data: IData[] = JSON.parse(response)
 
 
 
