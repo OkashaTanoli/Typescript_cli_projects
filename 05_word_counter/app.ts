@@ -1,4 +1,4 @@
-// #!/usr/bin/env node
+//#!/usr/bin/env node
 
 import inquirer from 'inquirer';
 import chalk from 'chalk';
@@ -6,7 +6,9 @@ import { createSpinner } from 'nanospinner';
 
 let sleep = () => new Promise((r) => setTimeout(r, 2000))
 
-console.log(chalk.bold.rgb(204, 204, 204)('WORDS COUNTER'));
+console.log(chalk.bold.rgb(204, 204, 204)(`\n   <<<===============================>>>`));
+console.log(chalk.bold.rgb(204, 204, 204)(`<<<=======>>>  ${chalk.redBright.bold('WORDS COUNTER')}  <<<=======>>>`));
+console.log(chalk.bold.rgb(204, 204, 204)(`   <<<===============================>>>\n`));
 
 
 async function ParaInput() {
@@ -48,4 +50,5 @@ while (true) {
     if (value) {
         break;
     }
+    console.log(chalk.whiteBright('\n================================================================\n'))
 }
