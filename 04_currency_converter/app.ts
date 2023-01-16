@@ -8,8 +8,9 @@ const response = fs.readFileSync('./data.json', 'utf8');
 let data = JSON.parse(response)
 
 
-console.log(chalk.bold.rgb(204, 204, 204)('CURRENCY CONVERTER'));
-
+console.log(chalk.bold.rgb(204, 204, 204)(`\n   <<<====================================>>>`));
+console.log(chalk.bold.rgb(204, 204, 204)(`<<<=======>>>  ${chalk.redBright.bold('CURRENCY CONVERTER')}  <<<=======>>>`));
+console.log(chalk.bold.rgb(204, 204, 204)(`   <<<====================================>>>\n`));
 
 interface IData {
     "Australian Dollar (AUD)": number,
@@ -90,4 +91,6 @@ while (true) {
     if (value) {
         break;
     }
+    console.log(chalk.whiteBright('\n================================================================\n'))
+
 }
