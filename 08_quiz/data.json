@@ -1,0 +1,179 @@
+[
+    {
+        "question": "What is the output of below code:",
+        "code":"console.log(a);@var a = 2;@var a = 1;",
+        "options": [
+            "undefined",
+            "2",
+            "Error"
+        ],
+        "answer": "undefined",
+        "level": "easy"
+    },
+    {
+        "question": "What is the output of below code:",
+        "code": "let a = 10;@let a = 20;@console.log(a)",
+        "options": [
+            "20",
+            "10",
+            "Error"
+        ],
+        "answer": "Error",
+        "level": "easy"
+    },
+    {
+        "question": "How do you write 'Hello World' in an alert box?",
+        "options": [
+            "alert('Hello World');",
+            "msgBox('Hello World');",
+            "alertBox('Hello World');",
+            "msg('Hello World');"
+        ],
+        "answer": "alert('Hello World');",
+        "level": "easy"
+    },
+    {
+        "question": "How do you create a function in JavaScript?",
+        "options": [
+            "function = myFunction()",
+            "function:myFunction()",
+            "function myFunction()"
+        ],
+        "answer": "function myFunction()",
+        "level": "easy"
+    },
+    {
+        "question": "How to write an IF statement for executing some code if 'i' is NOT equal to 5 ?",
+        "options": [
+            "if i <> 5",
+            "if (i <> 5)",
+            "if (i != 5)",
+            "if i =! 5 then"
+        ],
+        "answer": "if (i != 5)",
+        "level": "easy"
+    },
+    {
+        "question": "A for loop's header can be all blank like for(;;).",
+        "options": [
+            "True",
+            "False"
+        ],
+        "answer": "True",
+        "level": "intermediate"
+    },
+    {
+        "question": "What is the correct way to write a JavaScript array ?",
+        "options": [
+            " var colors = 'red', 'green', 'blue'",
+            " var colors = ['red', 'green', 'blue']",
+            " var colors = (1:'red', 2:'green', 3:'blue')",
+            " var colors = 1 = ('red'), 2 = ('green'), 3 = ('blue')"
+        ],
+        "answer": "['red', 'green', 'blue']",
+        "level": "intermediate"
+    },
+    {
+        "question": "What is the output of the below code: ",
+        "code": "var a = 20;@@function DoSomething() {@_var a = 10;@_console.log(a);@}@@DoSomething();@console.log(a);",
+        "options": [
+            "20,20",
+            "10,10",
+            "10,20",
+            "20,10"
+        ],
+        "answer": "10,20",
+        "level": "intermediate"
+    },
+    {
+        "question": "What is the value of 'elem' variable?",
+        "code": "var elem;@if ( 11 == 11 && 12 < 10 ){@_elem = 12;@}@else {@_elem = 'undefined';@}",
+        "options": [
+            "true",
+            "'undefined'",
+            "12"
+        ],
+        "answer": "'undefined'",
+        "level": "intermediate"
+    },
+    {
+        "question": "How many times the following loop will run",
+        "code": "var i = 5;@@for (; i < 5; i++) {@_console.log(i);@}",
+        "options": [
+            "5 Times",
+            "0 Times",
+            "Infinity Times"
+        ],
+        "answer": "0 Times",
+        "level": "intermediate"
+    },
+    {
+        "question": "What is the function to stop an interval timer ?",
+        "options": [
+            "stopTimer",
+            "clearInterval",
+            "shutdownTimer",
+            "clearTimer"
+        ],
+        "answer": "clearInterval",
+        "level": "difficult"
+    },
+    {
+        "question": "What is the output of the code below ?",
+        "code": "let fs = require('fs');@console.log('1');@fs.readFile('test.txt', 'utf8', function(error, data) {@_if (error) {@__throw error;@_}@_console.log('2');@});@console.log('3');",
+        "options": [
+            "123",
+            "321",
+            "132",
+            "213",
+            "231",
+            "312"
+        ],
+        "answer": "132",
+        "level": "difficult"
+    },
+    {
+        "question": "What is the output of the code below ?",
+        "code": "function job() {@_return new Promise(function(resolve, reject) {@__reject();@_});@}@@let promise = job();@@promise@.then(function() {@_console.log('Success 1');@})@.then(function() {@_console.log('Success 2');@})@.then(function() {@_console.log('Success 3');@})@.catch(function() {@_console.log('Error 1');@})@.then(function() {@_console.log('Success 4');@});",
+        "options": [
+            "Error 1",
+            "Success 1, Error 1",
+            "Success 1, Success 2, Success 3, Success 4",
+            "Success 1, Success 2, Success 3, Error 1, Success 4",
+            "Error 1, Success 1, Success 2, Success 3, Succes 4",
+            "Error 1, Success 4"
+        ],
+        "answer": "Error 1, Success 4",
+        "level": "difficult"
+    },
+    {
+        "question": "What is the output of the code below ?",
+        "code": "function job(state) {@_return new Promise(function(resolve, reject) {@__if (state) {@___resolve('success');@__} else {@___reject('error');@__}@_});@}@@let promise = job(true);@@promise@.then(function(data) {@_console.log(data);@_return job(false);@})@.catch(function(error) {@_console.log(error);@_return 'Error caught';@})@.then(function(data) {@_console.log(data);@_return job(true);@})@.catch(function(error) {@_console.log(error);@});",
+        "options": [
+            "error, success, Error caught",
+            "success, success",
+            "success, error, success, error",
+            "success, error, Error caught",
+            "error, Error caught, success",
+            "error, Error caught, success, error",
+            "success, error, error",
+            "success, success, success"
+        ],
+        "answer": "success, error, Error caught",
+        "level": "difficult"
+    },
+    {
+        "question": "What is the output of the code below ?",
+        "code": "console.log('a');@@setTimeout(function(){@_console.log('b');@}, 1000);@@console.log('c');",
+        "options": [
+            "c,b,a",
+            "a,b,c",
+            "c,a,b",
+            "b,c,a",
+            "a,c,b",
+            "b,a,c"
+        ],
+        "answer": "a,c,b",
+        "level": "difficult"
+    }
+]
