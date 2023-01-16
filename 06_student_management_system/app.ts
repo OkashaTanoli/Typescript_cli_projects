@@ -99,5 +99,6 @@ while (true) {
     if (value) {
         break;
     }
+    console.log(chalk.whiteBright('\n================================================================\n'))
 }
 
