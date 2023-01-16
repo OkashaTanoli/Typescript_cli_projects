@@ -5,7 +5,9 @@ import chalk from 'chalk';
 import { createSpinner } from 'nanospinner';
 
 
-console.log(chalk.bold.rgb(204, 204, 204)('TODO APP'));
+console.log(chalk.bold.rgb(204, 204, 204)(`\n   <<<================================>>>`));
+console.log(chalk.bold.rgb(204, 204, 204)(`<<<==========>>>  ${chalk.redBright.bold('TODO APP')}  <<<==========>>>`));
+console.log(chalk.bold.rgb(204, 204, 204)(`   <<<================================>>>\n`));
 
 type Todos = {
     text: string;
@@ -143,4 +145,5 @@ while (true) {
     if (value) {
         break;
     }
+    console.log(chalk.whiteBright('\n================================================================\n'))
 }
