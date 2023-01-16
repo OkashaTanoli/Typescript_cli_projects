@@ -4,7 +4,10 @@ import inquirer from 'inquirer';
 import chalk from 'chalk';
 import { createSpinner } from 'nanospinner'
 
-console.log(chalk.bold.rgb(204, 204, 204)('NUMBER GUESSING GAME'));
+console.log(chalk.bold.rgb(204, 204, 204)(`\n   <<<========================================>>>`));
+console.log(chalk.bold.rgb(204, 204, 204)(`<<<========>>>  ${chalk.redBright.bold('NUMBER GUESSING GAME')}  <<<========>>>`));
+console.log(chalk.bold.rgb(204, 204, 204)(`   <<<========================================>>>\n`));
+
 
 let sleep = () => new Promise((r) => setTimeout(r, 2000))
 
@@ -86,4 +89,5 @@ while (true) {
         console.log(chalk.bold.bgRgb(0, 0, 0).whiteBright(`You guessed ${score} out of ${total_turns}`))
         break
     }
+    console.log(chalk.whiteBright('\n================================================================\n'))
 }   
