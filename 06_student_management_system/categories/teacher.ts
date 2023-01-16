@@ -35,7 +35,7 @@ export async function ViewTeachers(teachers: Teacher[], courses: Course[]) {
     }
     console.table(teachers.map((val) => {
         return {
-            teacgerID: val.teacherID,
+            teacherID: val.teacherID,
             Name: val.name,
             Age: val.age,
             Courses: val.courses.length ? val.courses.map((course) => course.name).join(',') : "Not Assigned"
