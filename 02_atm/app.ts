@@ -5,7 +5,10 @@ import chalk from 'chalk';
 import { createSpinner, Spinner } from 'nanospinner';
 
 
-console.log(chalk.bold.rgb(204, 204, 204)('ATM MACHINE'));
+console.log(chalk.bold.rgb(204, 204, 204)(`\n   <<<===================================>>>`));
+console.log(chalk.bold.rgb(204, 204, 204)(`<<<==========>>>  ${chalk.redBright.bold('ATM MACHINE')}  <<<==========>>>`));
+console.log(chalk.bold.rgb(204, 204, 204)(`   <<<===================================>>>\n`));
+
 let ID = 12345
 let PIN = 4321
 let totalAmount = 1000
@@ -120,4 +123,6 @@ while (true) {
     if (value) {
         break;
     }
+    console.log(chalk.whiteBright('\n================================================================\n'))
+
 }
