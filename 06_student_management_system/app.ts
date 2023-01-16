@@ -7,8 +7,10 @@ import { AddStudent, ViewStudents } from './categories/student.js';
 import { AddTeacher, ViewTeachers } from './categories/teacher.js';
 import { AddCourse, ViewCourses } from './categories/course.js';
 
+console.log(chalk.bold.rgb(204, 204, 204)(`\n   <<<===========================================>>>`));
+console.log(chalk.bold.rgb(204, 204, 204)(`<<<=======>>>  ${chalk.redBright.bold('STUDENT MANAGEMENT SYSTEM')}  <<<=======>>>`));
+console.log(chalk.bold.rgb(204, 204, 204)(`   <<<===========================================>>>\n`));
 
-console.log(chalk.bold.rgb(204, 204, 204)('STUDENT MANAGEMENT SYSTEM'));
 
 let students: Student[] = []
 let courses: Course[] = []
