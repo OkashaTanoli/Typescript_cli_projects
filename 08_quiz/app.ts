@@ -5,7 +5,12 @@ import chalk from 'chalk';
 import { createSpinner } from 'nanospinner';
 import fs from 'fs';
 
+console.log(chalk.bold.rgb(204, 204, 204)(`\n   <<<============================>>>`));
+console.log(chalk.bold.rgb(204, 204, 204)(`<<<==========>>>  ${chalk.redBright.bold('QUIZ')}  <<<==========>>>`));
+console.log(chalk.bold.rgb(204, 204, 204)(`   <<<============================>>>\n`));
 let sleep = () => new Promise((r) => setTimeout(r, 2000))
+
+
 
 interface IData {
     question: string,
@@ -44,7 +49,7 @@ async function startQuiz(questions: IData[]) {
         }])
         let value: string = await input['options']
         answers.push(value)
-        if(i === questions.length-1){
+        if (i === questions.length - 1) {
             console.log(chalk.whiteBright(`=======================================================`))
         }
         console.log('\n')
@@ -108,15 +113,15 @@ async function DifficultyLevel() {
 }
 
 async function Name() {
-    let value:string
+    let value: string
     while (true) {
         const input = await inquirer.prompt([{
             name: 'name',
             message: 'Enter Your Name: ',
         }])
         value = await input['name']
-        if(value){
-           break 
+        if (value) {
+            break
         }
     }
     return value
