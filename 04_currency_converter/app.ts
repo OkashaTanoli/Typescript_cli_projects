@@ -3,9 +3,12 @@
 import inquirer from 'inquirer';
 import chalk from 'chalk';
 import { createSpinner } from 'nanospinner';
-import fs from 'fs';
-const response = fs.readFileSync('./data.json', 'utf8');
-let data = JSON.parse(response)
+// import fs from 'fs';
+import { createRequire } from 'module'
+const require = createRequire(import.meta.url)
+
+// const response = fs.readFileSync('./data.json', 'utf8');
+// let data = JSON.parse(response)
 
 
 console.log(chalk.bold.rgb(204, 204, 204)(`\n   <<<====================================>>>`));
@@ -25,6 +28,9 @@ interface IData {
     "Sri Lankan Rupee (LKR)": number,
     "United States Dollar (USD)": number
 }
+const data: IData = require('./data.json')
+
+
 type ObjectKey = keyof IData;
 let selected: ObjectKey | undefined;
 
