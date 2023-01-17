@@ -35,13 +35,20 @@ const Options = async () => {
 }
 
 const AddTodo = async () => {
-    const input = await inquirer.prompt([
-        {
-            name: chalk.rgb(255, 148, 140)('Enter TODO'),
+    let value: string;
+    while (true) {
+
+        const input = await inquirer.prompt([
+            {
+                name: chalk.rgb(255, 148, 140)('Enter TODO')
+            }
+        ])
+        value = await input['\x1B[38;2;255;148;140mEnter TODO\x1B[39m']
+        if (value.trim()){
+            break
         }
-    ])
-    let value = await input['\x1B[38;2;255;148;140mEnter TODO\x1B[39m']
-    todos.push({ text: value, id: Math.floor(Math.random() * 9999999999), completed: false })
+    }
+    todos.push({ text: value.trim(), id: Math.floor(Math.random() * 9999999999), completed: false })
     const spinner = createSpinner('Adding Todo').start()
     await sleep()
     spinner.success({ text: "Todo added successfully" })
