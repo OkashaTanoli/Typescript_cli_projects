@@ -19,7 +19,7 @@ async function SetDateAndTime(name: string, regex: RegExp) {
         const input = await inquirer.prompt([{
             name: 'date_and_time',
             message: chalk.whiteBright(`Enter ${name} : `),
-            default: isDate ? '1/22/2023' : '12:00 AM',
+            default: isDate ? '1/25/2024' : '12:00 AM',
         }])
         date_time = await input['date_and_time']
         if (regex.test(date_time)) {
