@@ -69,15 +69,15 @@ function StartTimer(complete_date: string) {
 
 console.log(chalk.bgRgb(79, 1, 61).whiteBright(`                 `))
 console.log(chalk.bgRgb(79, 1, 61).whiteBright(`  Instructions:  `))
-console.log(chalk.whiteBright(`----------------------------------------------------------------------`))
+console.log(chalk.whiteBright(`--------------------------------------------------------------------------`))
 console.log(`${chalk.whiteBright('=>')} Date Format: ${chalk.bgRgb(56, 56, 56).whiteBright(' MM/DD/YYYY [Year Limit 2023-2025] ')} Example: ${chalk.bgRgb(56, 56, 56).whiteBright(' 1/25/2024 ')}.`)
-console.log(chalk.whiteBright(`----------------------------------------------------------------------`))
+console.log(chalk.whiteBright(`--------------------------------------------------------------------------`))
 console.log(`${chalk.whiteBright('=>')} Time Format: ${chalk.bgRgb(56, 56, 56).whiteBright(' Hours[0-12]:Minutes[0-59] PM/AM ')} Example: ${chalk.bgRgb(56, 56, 56).whiteBright(' 11:30 AM ')}.`)
-console.log(chalk.whiteBright(`----------------------------------------------------------------------`))
+console.log(chalk.whiteBright(`--------------------------------------------------------------------------`))
 console.log(`${chalk.whiteBright('=>')} Timer Will Be Expired If Time Is Ended.`)
-console.log(chalk.whiteBright(`----------------------------------------------------------------------`))
+console.log(chalk.whiteBright(`--------------------------------------------------------------------------`))
 console.log(`${chalk.whiteBright('=>')} Press ${chalk.bgRgb(56, 56, 56).whiteBright(' Ctrl + C ')} To Stop Timer.`)
-console.log(chalk.whiteBright(`----------------------------------------------------------------------\n`))
+console.log(chalk.whiteBright(`--------------------------------------------------------------------------\n`))
 
 
 let dateRegex = /^(0?[1-9]|1[012])[\/](0?[1-9]|[12][0-9]|3[01])[\/](202[3-5])$/
