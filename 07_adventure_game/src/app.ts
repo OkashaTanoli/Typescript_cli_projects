@@ -6,9 +6,9 @@ import chalk from "chalk";
 import { createSpinner } from "nanospinner";
 
 let sleep = () => new Promise((r) => setTimeout(r, 2000))
-console.log(chalk.bold.rgb(204, 204, 204)(`\n   <<<=================================>>>`));
-console.log(chalk.bold.rgb(204, 204, 204)(`<<<===========>>>  ${chalk.redBright.bold('ADVENTURE GAME')}  <<<===========>>>`));
-console.log(chalk.bold.rgb(204, 204, 204)(`   <<<=================================>>>\n`));
+console.log(chalk.bold.rgb(204, 204, 204)(`\n   <<<====================================>>>`));
+console.log(chalk.bold.rgb(204, 204, 204)(`<<<=========>>>  ${chalk.redBright.bold('ADVENTURE GAME')}  <<<=========>>>`));
+console.log(chalk.bold.rgb(204, 204, 204)(`   <<<====================================>>>\n`));
 console.log(chalk.bgRgb(112, 79, 1).whiteBright(' INSTRUCTIONS :'))
 
 
